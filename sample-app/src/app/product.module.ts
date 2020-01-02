@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from './services/guards/product-detail.guard';
 import { SharedModule } from './shared.module';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,6 +18,7 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     EditProductComponent
   ],
   imports: [
+    ReactiveFormsModule,
     RouterModule.forChild([
       { path: 'products', component: ProductListComponent },
       { path: 'products/:id', canActivate: [ProductDetailGuard], component: ProductDetailComponent },
