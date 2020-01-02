@@ -28,6 +28,7 @@
                         <th>Available</th>
                         <th>Price</th>
                         <th>5 Star Rating</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,6 +48,11 @@
                             <app-star [rating]="product.starRating" (ratingClicked)="onRatingClicked($event)">
                             </app-star>
                         </td>
+                        <td>
+                            <button class="btn btn-outline-primary btn-sm"
+                                    [routerLink]="['/products', product.productId, 'edit']">
+                              Edit
+                            </button>
                     </tr>
                 </tbody>
             </table>

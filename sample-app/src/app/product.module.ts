@@ -20,6 +20,7 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     RouterModule.forChild([
       { path: 'products', component: ProductListComponent },
       { path: 'products/:id', canActivate: [ProductDetailGuard], component: ProductDetailComponent },
+      { path: 'products/:id/edit', component: EditProductComponent }
     ]),
     SharedModule
   ]
