@@ -115,7 +115,7 @@ export class EditProductComponent implements OnInit {
     }
     this.product = product;
 
-    if (this.product.productId === 0) {
+    if (this.product.id === 0) {
       this.pageTitle = 'Add Product';
     } else {
       this.pageTitle = `Edit Product: ${this.product.productName}`;
@@ -131,12 +131,12 @@ export class EditProductComponent implements OnInit {
   }
 
   deleteProduct(): void {
-    if (this.product.productId === 0) {
+    if (this.product.id === 0) {
       // Don't delete, it was never saved.
       this.onSaveComplete();
     } else {
       if (confirm(`Really delete the product: ${this.product.productName}?`)) {
-        this.productService.deleteProduct(this.product.productId)
+        this.productService.deleteProduct(this.product.id)
           .subscribe({
             next: () => this.onSaveComplete(),
             error: err => this.errorMessage = err
